@@ -5,13 +5,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="Getting started">
-      <change afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/menu.php" afterDir="false" />
+    <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="comments">
+      <change afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commentaries.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/db.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/utils.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myPage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/dbConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1k9FCWXf19Q0O8X5yVsJH7HmgtY" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -37,7 +44,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\prax3\assets\css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.prax3">
+    <configuration name="commentaries.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/prax3/commentaries.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="prax3" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.prax3" />
+        <item itemvalue="JavaScript Debug.commentaries.php" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -48,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605104772452</updated>
       <workItem from="1605104773651" duration="62000" />
-      <workItem from="1605105861647" duration="16529000" />
+      <workItem from="1605105861647" duration="45903000" />
     </task>
     <task id="LOCAL-00001" summary="Getting started">
       <created>1605104803950</created>
@@ -85,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605185686145</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="comments">
+      <created>1605200290625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605200290625</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,28 +140,49 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Getting started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Getting started" />
+    <MESSAGE value="comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="867" y="58" key="#PHP" timestamp="1605215198152">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="867" y="58" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1605215198152" />
     <state x="389" y="254" key="#SQL_Dialects" timestamp="1605183388601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="389" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1605183388601" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605195314016">
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605296785065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605195314016" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605185692485">
+    <state x="499" y="162" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605296785065" />
+    <state x="975" y="138" key="NewPhpClassDialog" timestamp="1605273638124">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605185692485" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1605125786339">
+    <state x="975" y="138" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1605273638124" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605296604834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605125786339" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605197617998">
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605296604834" />
+    <state x="555" y="60" key="SettingsEditor" timestamp="1605215394571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605197617998" />
+    <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605215394571" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605217057537">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605217057537" />
+    <state x="587" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605217062173">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="587" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605217062173" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1605295205966">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605295205966" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605214447159">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1605214447159" />
   </component>
 </project>

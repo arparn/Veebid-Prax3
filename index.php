@@ -1,50 +1,59 @@
 <?php
 
-$title = "My first php web page!";
-$content = "Hello World!";
+require_once 'includes/utils.php';
+require_once 'includes/auth.php';
+require_once 'includes/db.php';
 
-/*
- * $_GET
- * $_POST
- * $_FILES
- *
- * $_SESSION
- * $_SERVER
- */
+if (post('action') == 'do_login') {
 
-/*
- * MySQL põhilised andmetüübid:
- *
- * integer - täisarv
- * tinyint - piisike täisarv (kuni 128)
- * float - komaga arv
- * varchar - lühem tekst
- * text - pikem text
- * boolean - true/false
- */
+    $email = post('email');
+    $password = post('password');
 
-$num = 1 + strlen($title);
-$num2 = $_GET["num"] ?? 0; # Берем переменную $num из поисковой строки. Try: localhost/prax3/?num=10
-$num3 = isset($_GET["num"]) ? $_GET["num"] : 0 # $num2 = $num3
+    if (auth_login($email, $password)) {
+        redirect('myPage.php');
+    }
+
+}
 
 ?>
 
+<?php include 'components/header.php'; ?>
+<!-- CONTENT -->
+<div>
 
-<!DOCTYPE html>
-<html lang="en">
+    <h1>Login</h1>
 
-    <head>
-        <title>Example</title>
-        <meta charset="UTF-8">
-    </head>
+    <p>Do not have an account? <a href="registration.php">Please register</a></p>
 
-    <body>
+    <form method="post">
+        <?php if (isset($_SESSION['message'])): ?>
+            <div class="alert <?php echo $_SESSION['type'] ?>">
+                <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+                unset($_SESSION['type']);
+                ?>
+            </div>
+        <?php endif;?>
+        <input type="hidden" name="action" value="do_login">
+        <div>
+            <label>Email:
+                <input type="text" name="email">
+            </label>
+        </div>
 
-        <h1><?php echo $title;?></h1>
-        <p><?php echo $content;?></p>
+        <div>
+            <label>Password:
+                <input type="password" name="password">
+            </label>
+        </div>
 
-        <h2><?php echo $num;?></h2>
+        <div>
+            <input type="submit" value="Log In">
+        </div>
 
-    </body>
+    </form>
 
-</html>
+</div>
+<!-- /CONTENT -->
+<?php include 'components/footer.php'; ?>
