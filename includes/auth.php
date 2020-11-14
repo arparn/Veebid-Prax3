@@ -10,13 +10,13 @@ function auth_login($email, $password) {
     //3. Execute sql query and read the results
     //4. If no results, show login failed error, if success write user to session
     $conn = db();
-    $query = sprintf('SELECT * FROM users WHERE email=? AND password=?');
+    $query = sprintf('SELECT * FROM users WHERE email=?');
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('ss', $email, $password);
+    $stmt->bind_param('s', $email);
     if ($stmt->execute()) {
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
-        if (isset($user) && password_verify($password, $user['password'])) { // if password matches // password_verify($password, $user['password'])
+        if (password_verify($password, $user['password'])) { // if password matches // password_verify($password, $user['password'])
             $stmt->close();
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['name'];
@@ -40,6 +40,12 @@ function auth_login($email, $password) {
 
 function do_logout() {
     //Delete user to session
+    session_destroy();
+    unset($_SESSION['id']);
+    unset($_SESSION['username']);
+    unset($_SESSION['email']);
+    unset($_SESSION['verify']);
+    redirect('/prax3/');
 }
 
 function is_logged_in() {

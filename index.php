@@ -10,7 +10,7 @@ if (post('action') == 'do_login') {
     $password = post('password');
 
     if (auth_login($email, $password)) {
-        redirect('myPage.php');
+        redirect('/prax3/myPage.php');
     }
 
 }
@@ -49,7 +49,7 @@ if (post('action') == 'do_login') {
         </div>
 
         <div>
-            <input type="submit" value="Log In">
+            <input type="submit" value="Login">
         </div>
 
     </form>
