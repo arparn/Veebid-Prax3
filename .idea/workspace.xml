@@ -5,13 +5,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="Add login and registration with password encryption. Spend &gt;10 hours ;)">
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+    <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="Fix bug with login.">
+      <change afterPath="$PROJECT_DIR$/modifyData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/myPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +68,9 @@
       <option name="presentableId" value="Default" />
       <updated>1605104772452</updated>
       <workItem from="1605104773651" duration="62000" />
-      <workItem from="1605105861647" duration="58015000" />
+      <workItem from="1605105861647" duration="58061000" />
+      <workItem from="1605367486762" duration="835000" />
+      <workItem from="1605375724134" duration="4969000" />
     </task>
     <task id="LOCAL-00001" summary="Getting started">
       <created>1605104803950</created>
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605298322758</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix bug with login.">
+      <created>1605362832298</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605362832298</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +150,8 @@
     <MESSAGE value="Getting started" />
     <MESSAGE value="comments" />
     <MESSAGE value="Add login and registration with password encryption. Spend &gt;10 hours ;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add login and registration with password encryption. Spend &gt;10 hours ;)" />
+    <MESSAGE value="Fix bug with login." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with login." />
   </component>
   <component name="WindowStateProjectService">
     <state x="867" y="58" key="#PHP" timestamp="1605215198152">
@@ -162,18 +170,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="975" y="138" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1605273638124" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605355218286">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605376668138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605355218286" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605376668138" />
     <state x="555" y="60" key="SettingsEditor" timestamp="1605215394571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605215394571" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605298327038">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605362834798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605298327038" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605362834798" />
     <state x="587" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605217062173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
