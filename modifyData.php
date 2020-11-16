@@ -3,7 +3,7 @@ require_once 'includes/utils.php';
 require_once 'includes/auth.php';
 require_once 'includes/db.php';
 
-if (!$_SESSION['username']) {
+if (!is_logged_in()) {
     redirect('index.php');
 }
 
@@ -15,10 +15,10 @@ if (post('action') == 'change_info') {
 
 
     if (post('city')) {
-        $city = post('city');
+        $city = htmlspecialchars(post('city'));;
     }
     if (post('description')) {
-        $description = post('description');
+        $description = htmlspecialchars(post('description'));;
     }
 
     $conn = db();

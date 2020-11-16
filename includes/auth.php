@@ -16,7 +16,7 @@ function auth_login($email, $password) {
     if ($stmt->execute()) {
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) { // if password matches // password_verify($password, $user['password'])
+        if ($user && password_verify($password, $user['password'])) { // if password matches
             $stmt->close();
             $_SESSION['id'] = $user['id'];
             $_SESSION['username'] = $user['name'];
@@ -49,10 +49,13 @@ function do_logout() {
 }
 
 function is_logged_in() {
-    return get_user();
+    if (auth_get_user() != null) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-
 function auth_get_user() {
-    return $_SESSION['user'] ?? null;
+    return $_SESSION['username'] ?? null;
 }
