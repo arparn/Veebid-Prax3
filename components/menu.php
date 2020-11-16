@@ -7,6 +7,7 @@ require_once 'includes/auth.php';
 <nav>
     <ul>
         <li><a href="friends.php">Friends</a></li>
+        <li><a href="news.php">News</a></li>
         <li><a href="myPage.php">Profile</a></li>
     </ul>
 

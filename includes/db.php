@@ -56,33 +56,28 @@ function get_friends($id) {
     $query = sprintf("SELECT * FROM friends WHERE first_user_id=? OR second_user_id=?");
     $stmt = $conn->prepare($query);
     $stmt->bind_param('ii', $id, $id);
-    if ($stmt->execute()) {
-        $return_data = [];
-        $result = $stmt->get_result();
-        $all_users = $result->fetch_all();
-        foreach ($all_users as $row) {
-            if ($row->first_user_id == $id) {
-                $get_user_query = sprintf('SELECT * FROM users WHERE id=?');
-                $get_user_stmt = $conn->prepare($get_user_query);
-                $get_user_stmt->bind_param('i', $row->second_user_id);
-                $get_user_stmt->execute();
-                $res = $get_user_stmt->get_result();
-                $return_data[] = $res->fetch_assoc();
-            } else {
-                $get_user_query = sprintf('SELECT * FROM users WHERE id=?');
-                $get_user_stmt = $conn->prepare($get_user_query);
-                $get_user_stmt->bind_param('i', $row->first_user_id);
-                $get_user_stmt->execute();
-                $res = $get_user_stmt->get_result();
-                $return_data[] = $res->fetch_assoc();
-            }
+    $stmt->execute();
+    $return_data = [];
+    $result = $stmt->get_result();
+    $all_users = $result->fetch_all();
+    foreach ($all_users as $row) {
+        if ($row['1'] == $id) {
+            $get_user_query = sprintf('SELECT * FROM users WHERE id=?');
+            $get_user_stmt = $conn->prepare($get_user_query);
+            $get_user_stmt->bind_param('i', $row['2']);
+            $get_user_stmt->execute();
+            $res = $get_user_stmt->get_result();
+            $return_data[] = $res->fetch_assoc();
+        } else {
+            $get_user_query = sprintf('SELECT * FROM users WHERE id=?');
+            $get_user_stmt = $conn->prepare($get_user_query);
+            $get_user_stmt->bind_param('i', $row['1']);
+            $get_user_stmt->execute();
+            $res = $get_user_stmt->get_result();
+            $return_data[] = $res->fetch_assoc();
         }
-        return $return_data;
-    } else {
-        $_SESSION['message'] = "Cant get friends";
-        $_SESSION['type'] = "alert-danger";
-        return null;
     }
+    return $return_data;
 }
 
 function delete_post($post_id) {

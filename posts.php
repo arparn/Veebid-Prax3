@@ -68,13 +68,9 @@ $posts = get_posts($user_id);
                             <input type="submit" value="Delete this post">
                         </div>
                     </form>
-                    <form method="post" action="comments.php">
-                        <input type="hidden" name="post_to_show" value="<?php echo $previous_post->id?>">
-                        <button type="submit">View Comments</button>
-                    </form>
+                    <a href="comments.php?post_id=<?php echo $previous_post->id?>&location=myPage.php">View Comments</a>
                 </li>
             <?php } ?>
         </ul>
     <?php } ?>
-
 </div>

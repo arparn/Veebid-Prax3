@@ -7,7 +7,8 @@ if (!is_logged_in()) {
     redirect('index.php');
 }
 
-$post_id = $_POST['view_comment'];
+$post_id = $_GET['post_id'] ?? 0;
+$location = $_GET['location'] ?? 0;
 $post = get_post($post_id);
 
 $user_id = $_SESSION['id'];
@@ -29,7 +30,12 @@ if (post("action") == "add_comment") {
 
 if (post('action') == "delete_comment") {
     $comment_to_del = post('comment_id');
-    delete_post($comment_to_del);
+    $conn = db();
+    $query = 'DELETE FROM comments WHERE id="%d"';
+    $query = sprintf($query, $comment_to_del);
+    mysqli_query($conn, $query) or die('Error');
+    $_SESSION['message'] = "Comment Deleted!";
+    $_SESSION['type'] = 'alert-success';
 }
 
 $comments = get_comments($post_id);
@@ -54,9 +60,10 @@ $comments = get_comments($post_id);
                     <li>
                         <form method="post">
                             <div>
-                                <?php if ($previous_comment->user_id === $_SESSION['id']) { ?>
+                                <?php if ($previous_comment->user_id == $_SESSION['id']) { ?>
                                     <input type="hidden" name="action" value="delete_comment">
                                     <input type="hidden" name="comment_id" value="<?php echo $previous_comment->id; ?>">
+                                    <p><?php echo $previous_comment->username;?>:</p>
                                     <p><?php echo $previous_comment->content; ?></p>
                                     <p><?php echo $previous_comment->created_at; ?></p>
                                     <input type="submit" value="Delete this comment">
@@ -90,8 +97,7 @@ $comments = get_comments($post_id);
 
         </form>
     </div>
+    <a href="<?php echo $location?>">Go Back</a>
 
-    <a href="myPage.php">Back to my page</a>
-
-    <!-- /CONTENT -->
+<!-- /CONTENT -->
 <?php include 'components/footer.php'; ?>

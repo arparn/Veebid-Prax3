@@ -5,16 +5,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="Add person description and city.">
-      <change afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/friends.php" afterDir="false" />
+    <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="prax3">
+      <change afterPath="$PROJECT_DIR$/news.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commentaries.php" beforeDir="false" afterPath="$PROJECT_DIR$/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friends.php" beforeDir="false" afterPath="$PROJECT_DIR$/friends.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modifyData.php" beforeDir="false" afterPath="$PROJECT_DIR$/modifyData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/myPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/posts.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,7 @@
       <workItem from="1605435054205" duration="30732000" />
       <workItem from="1605475670055" duration="1057000" />
       <workItem from="1605523022933" duration="15529000" />
-      <workItem from="1605544138342" duration="394000" />
+      <workItem from="1605544138342" duration="12486000" />
     </task>
     <task id="LOCAL-00001" summary="Getting started">
       <created>1605104803950</created>
@@ -144,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605380968776</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="prax3">
+      <created>1605544547312</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605544547312</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +173,8 @@
     <MESSAGE value="Add login and registration with password encryption. Spend &gt;10 hours ;)" />
     <MESSAGE value="Fix bug with login." />
     <MESSAGE value="Add person description and city." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add person description and city." />
+    <MESSAGE value="prax3" />
+    <option name="LAST_COMMIT_MESSAGE" value="prax3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="867" y="58" key="#PHP" timestamp="1605215198152">
@@ -187,18 +193,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="975" y="138" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1605273638124" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605523094114">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605553670495">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605523094114" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605553670495" />
     <state x="555" y="60" key="SettingsEditor" timestamp="1605215394571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605215394571" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605380970744">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605544549495">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605380970744" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605544549495" />
     <state x="587" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605217062173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
