@@ -23,23 +23,35 @@ if (post('action') == 'register') {
         $email = htmlspecialchars($_POST['email']);
         $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
 
-        //We shall get DB connection pointer from a wrapper function
-        $conn = db();
+        $users = get_users();
+        $check = true;
+        foreach ($users as $user) {
+            if ($user->email == $email) {
+                $check = false;
+                $errors['password'] = 'This email is already registered';
+                break;
+            }
+        }
 
-        //We shall provide a template for a query. The %s will be cast to string,
-        //%d to integer etc. See: https://www.php.net/manual/en/function.sprintf.php
-        $query = 'INSERT INTO users(name, email, password) VALUES("%s", "%s", "%s")';
+        if ($check) {
+            //We shall get DB connection pointer from a wrapper function
+            $conn = db();
 
-        //We will construct a query here from actual variables
-        $query = sprintf($query, $name, $email, $password);
+            //We shall provide a template for a query. The %s will be cast to string,
+            //%d to integer etc. See: https://www.php.net/manual/en/function.sprintf.php
+            $query = 'INSERT INTO users(name, email, password) VALUES("%s", "%s", "%s")';
 
-        //Execute the query
-        mysqli_query($conn, $query) or die('Error');
+            //We will construct a query here from actual variables
+            $query = sprintf($query, $name, $email, $password);
 
-        $_SESSION['message'] = "You are registered!";
-        $_SESSION['type'] = 'alert-success';
+            //Execute the query
+            mysqli_query($conn, $query) or die('Error');
 
-        redirect('index.php');
+            $_SESSION['message'] = "You are registered!";
+            $_SESSION['type'] = 'alert-success';
+
+            redirect('index.php');
+        }
     }
 }
 

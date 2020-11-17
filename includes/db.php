@@ -23,6 +23,11 @@ function db_get_list($query) {
     return $data;
 }
 
+function get_users() {
+    $query = 'SELECT * FROM users';
+    return db_get_list($query);
+}
+
 function like_post($post_id, $user_id) {
     $liked_posts = get_liked_posts($user_id);
     $post_liked = false;
