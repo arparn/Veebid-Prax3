@@ -12,13 +12,16 @@ foreach ($friends as $friend) {
     $friends_id[] = $friend['id'];
 }
 
-
 foreach (db_get_list('SELECT * FROM posts ORDER BY created_at DESC') as $post) {
     foreach ($friends_id as $id) {
         if ($post->user_id == $id) {
             $news[] = $post;
         }
     }
+}
+if (post('action') == 'like') {
+    $post_id_like = post('post_id_like');
+    like_post($post_id_like, $_SESSION['id']);
 }
 ?>
 
@@ -38,6 +41,12 @@ foreach (db_get_list('SELECT * FROM posts ORDER BY created_at DESC') as $post) {
                         <p><?php echo $post->created_at; ?></p>
                     </div>
                     <a href="comments.php?post_id=<?php echo $post->id?>&location=news.php">View Comments</a>
+                    <form method="post">
+                        <input type="hidden" name="action" value="like">
+                        <input type="hidden" name="post_id_like" value="<?php echo $post->id?>">
+                        <?php $likes = get_likes($post->id)?>
+                        <input type="submit" value="Like"> <p><?php echo count($likes)?></p>
+                    </form>
                 </li>
             <?php } ?>
         </ul>

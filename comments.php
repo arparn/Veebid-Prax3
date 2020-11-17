@@ -38,6 +38,11 @@ if (post('action') == "delete_comment") {
     $_SESSION['type'] = 'alert-success';
 }
 
+if (post('action') == 'like') {
+    $post_id_like = post('post_id_like');
+    like_post($post_id_like, $user_id);
+}
+
 $comments = get_comments($post_id);
 
 ?>
@@ -49,6 +54,12 @@ $comments = get_comments($post_id);
         <p><?php echo $post['content']?></p>
         <p><?php echo $post['created_at']?></p>
     </div>
+    <form method="post">
+        <input type="hidden" name="action" value="like">
+        <input type="hidden" name="post_id_like" value="<?php echo $post_id?>">
+        <?php $likes = get_likes($post_id)?>
+        <input type="submit" value="Like"> <p><?php echo count($likes)?></p>
+    </form>
 
     <div>
         <?php if (count($comments) === 0) { ?>

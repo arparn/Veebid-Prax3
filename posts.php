@@ -28,6 +28,10 @@ if (post('action') == "delete_post") {
     $post_to_del = post('post_id');
     delete_post($post_to_del);
 }
+if (post('action') == 'like') {
+    $post_id_like = post('post_id_like');
+    like_post($post_id_like, $user_id);
+}
 
 $posts = get_posts($user_id);
 ?>
@@ -69,6 +73,12 @@ $posts = get_posts($user_id);
                         </div>
                     </form>
                     <a href="comments.php?post_id=<?php echo $previous_post->id?>&location=myPage.php">View Comments</a>
+                    <form method="post">
+                        <input type="hidden" name="action" value="like">
+                        <input type="hidden" name="post_id_like" value="<?php echo $previous_post->id?>">
+                        <?php $likes = get_likes($previous_post->id)?>
+                        <input type="submit" value="Like"> <p><?php echo count($likes)?></p>
+                    </form>
                 </li>
             <?php } ?>
         </ul>
