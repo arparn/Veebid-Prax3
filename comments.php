@@ -58,7 +58,7 @@ $comments = get_comments($post_id);
         <input type="hidden" name="action" value="like">
         <input type="hidden" name="post_id_like" value="<?php echo $post_id?>">
         <?php $likes = get_likes($post_id)?>
-        <input type="submit" value="Like"> <p><?php echo count($likes)?></p>
+        <input type="submit" value="Like <?php echo count($likes)?>">
     </form>
 
     <div>
