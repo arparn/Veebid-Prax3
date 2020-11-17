@@ -40,12 +40,12 @@ if (post('action') == 'like') {
                         <p><?php echo $post->content; ?></p>
                         <p><?php echo $post->created_at; ?></p>
                     </div>
-                    <a href="comments.php?post_id=<?php echo $post->id?>&location=news.php">View Comments</a>
+                    <a href="comments.php?post_id=<?php echo $post->id?>&location=news.php">View Comments <?php echo count(get_comments($post->id))?></a>
                     <form method="post">
                         <input type="hidden" name="action" value="like">
                         <input type="hidden" name="post_id_like" value="<?php echo $post->id?>">
                         <?php $likes = get_likes($post->id)?>
-                        <input type="submit" value="Like"> <p><?php echo count($likes)?></p>
+                        <input type="submit" value="Like <?php echo count($likes)?>">
                     </form>
                 </li>
             <?php } ?>

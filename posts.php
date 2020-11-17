@@ -38,6 +38,7 @@ $posts = get_posts($user_id);
 
 <div>
 
+
     <h3>Make Post:</h3>
 
     <form method="post">
@@ -72,12 +73,12 @@ $posts = get_posts($user_id);
                             <input type="submit" value="Delete this post">
                         </div>
                     </form>
-                    <a href="comments.php?post_id=<?php echo $previous_post->id?>&location=myPage.php">View Comments</a>
+                    <a href="comments.php?post_id=<?php echo $previous_post->id?>&location=myPage.php">View Comments <?php echo count(get_comments($previous_post->id))?></a>
                     <form method="post">
                         <input type="hidden" name="action" value="like">
                         <input type="hidden" name="post_id_like" value="<?php echo $previous_post->id?>">
                         <?php $likes = get_likes($previous_post->id)?>
-                        <input type="submit" value="Like"> <p><?php echo count($likes)?></p>
+                        <input type="submit" value="Like <?php echo count($likes)?>">
                     </form>
                 </li>
             <?php } ?>
