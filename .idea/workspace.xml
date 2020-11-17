@@ -6,8 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd85402c-5219-40e0-8669-d266d5d81322" name="Default Changelist" comment="done">
+      <change afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,7 @@
       <workItem from="1605475670055" duration="1057000" />
       <workItem from="1605523022933" duration="15529000" />
       <workItem from="1605544138342" duration="13146000" />
-      <workItem from="1605603645581" duration="20425000" />
+      <workItem from="1605603645581" duration="21557000" />
     </task>
     <task id="LOCAL-00001" summary="Getting started">
       <created>1605104803950</created>
@@ -180,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605642751275</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="done">
+      <created>1605643318165</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605643318165</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,18 +234,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="975" y="138" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1605273638124" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605553670495">
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605643543576">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605553670495" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605643543576" />
     <state x="555" y="60" key="SettingsEditor" timestamp="1605215394571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605215394571" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605642753827">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605643319379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605642753827" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605643319379" />
     <state x="587" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605217062173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
