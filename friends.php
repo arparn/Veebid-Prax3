@@ -76,7 +76,7 @@ $friends = get_friends($_SESSION['id']);
 <?php include 'components/header.php'; ?>
 <!-- CONTENT -->
 
-<div>
+<div class="main_div_login">
 <h3>Search by name or city:</h3>
 <form method="post">
 
@@ -87,59 +87,59 @@ $friends = get_friends($_SESSION['id']);
             <input type="text" name="name">
         </label>
     </div>
-
-    <div>
-        <input type="submit" value="Search">
-    </div>
-
+    <input class="button" type="submit" value="Search">
 </form>
-</div>
 
 <div>
     <?php if (count($needed_people) !== 0) { ?>
         <h3>For your request people found (<?php echo count($needed_people)?>):</h3>
-        <ul>
+        <ul class="posts">
             <?php foreach ($needed_people as $person) { ?>
-                <li>
+                <li class="friend_search">
                     <form method="post">
                         <div>
                             <?php if (!check_if_friends($_SESSION['id'], $person['0'])) {?>
                             <input type="hidden" name="action" value="add_to_friends">
                             <input type="hidden" name="person_id" value="<?php echo $person['0']?>">
-                            <p><?php echo $person['1']?></p>
-                            <p><?php echo $person['5']?></p>
-                            <p><?php echo $person['4']?></p>
-                            <input type="submit" value="Add to friends">
+                            <p>Name: <?php echo $person['1']?></p>
+                            <p>From: <?php echo $person['5']?></p>
+                            <p>Description: <?php echo $person['4']?></p>
+                            <input class="button" type="submit" value="Add to friends">
                             <?php } else { ?>
-                                <p><?php echo $person['1']?></p>
-                                <p><?php echo $person['5']?></p>
-                                <p><?php echo $person['4']?></p>
+                                <p>Name: <?php echo $person['1']?></p>
+                                <p>From: <?php echo $person['5']?></p>
+                                <p>Description: <?php echo $person['4']?></p>
                                 <p><?php echo $person['1']?> is already your friend.</p>
                             <?php } ?>
                         </div>
                     </form>
                 </li>
+                <br>
             <?php } ?>
         </ul>
     <?php } ?>
 </div>
 
-<div>
-    <?php if (count($friends) === 0) { ?>
-        <h3>You have no friends yet.</h3>
-    <?php } else { ?>
-        <h3>Your Friends:</h3>
+<?php if (count($friends) === 0) { ?>
+    <h3>You have no friends yet.</h3>
+<?php } else { ?>
+    <h3>Your Friends:</h3>
+    <div class="posts">
         <?php foreach ($friends as $friend) { ?>
-            <form method="post">
-                <input type="hidden" name="action" value="delete_friend">
-                <input type="hidden" name="person_id_delete" value="<?php echo $friend['id']?>">
-                <p><?php echo $friend['name']?></p>
-                <p><?php echo $friend['city']?></p>
-                <p><?php echo $friend['description']?></p>
-                <input type="submit" value="Delete from friends">
-            </form>
+                <div class="friends">
+                    <form method="post">
+                        <input type="hidden" name="action" value="delete_friend">
+                        <input type="hidden" name="person_id_delete" value="<?php echo $friend['id']?>">
+                        <p>Name: <?php echo $friend['name']?></p>
+                        <p>From: <?php echo $friend['city']?></p>
+                        <p>Description: <?php echo $friend['description']?></p>
+                        <input class="button" type="submit" value="Delete from friends">
+                    </form>
+                </div>
+                <br>
         <?php } ?>
-    <?php } ?>
+    </div>
+<?php } ?>
 </div>
 
 <!-- /CONTENT -->

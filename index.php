@@ -6,24 +6,25 @@ require_once 'includes/db.php';
 
 if (post('action') == 'do_login') {
 
-    $email = post('email');
-    $password = post('password');
+    $email = htmlspecialchars(post('email'));
+    $password = htmlspecialchars(post('password'));
 
     if (auth_login($email, $password)) {
         redirect('/prax3/myPage.php');
     }
-
 }
 
 ?>
 
 <?php include 'components/header.php'; ?>
 <!-- CONTENT -->
-<div>
-
+<div class="main_div_login">
     <h1>Login</h1>
 
-    <p>Do not have an account? <a href="registration.php">Please register</a></p>
+    <div class="login">
+    <p>Do not have an account? <a href="registration.php"><strong>Please register</strong></a></p>
+
+    <br>
 
     <form method="post">
         <?php if (isset($_SESSION['message'])): ?>
@@ -36,24 +37,18 @@ if (post('action') == 'do_login') {
             </div>
         <?php endif;?>
         <input type="hidden" name="action" value="do_login">
-        <div>
-            <label>Email:
-                <input type="text" name="email">
-            </label>
-        </div>
-
-        <div>
-            <label>Password:
-                <input type="password" name="password">
-            </label>
-        </div>
-
-        <div>
-            <input type="submit" value="Login">
-        </div>
-
+        <label>Email:
+            <input type="text" name="email" style="margin-left: 30px">
+        </label>
+        <br>
+        <br>
+        <label>Password:
+            <input type="password" name="password">
+        </label>
+        <br>
+        <input class="button" type="submit" value="Login">
     </form>
-
+    </div>
 </div>
 <!-- /CONTENT -->
 <?php include 'components/footer.php'; ?>

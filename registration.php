@@ -9,19 +9,19 @@ $errors = [];
 if (post('action') == 'register') {
 
     /* Validation */
-    if (empty($_POST['name'])) {
+    if (empty(htmlspecialchars($_POST['name']))) {
         $errors['name'] = 'Please insert your name.';
-    }else if(empty($_POST['email'])) {
+    }else if(empty(htmlspecialchars($_POST['email']))) {
         $errors['email'] = 'Email is required for registering';
-    } else if(empty($_POST['password'])) {
+    } else if(empty(htmlspecialchars($_POST['password']))) {
         $errors['password'] = 'You need to provide password';
-    }else if($_POST['password'] !== $_POST['password1']) {
+    }else if(htmlspecialchars($_POST['password']) !== htmlspecialchars($_POST['password1'])) {
         $errors['password'] = 'Passwords do not match';
     } else {
 
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
 
         //We shall get DB connection pointer from a wrapper function
         $conn = db();
@@ -48,7 +48,7 @@ if (post('action') == 'register') {
 
 <?php include 'components/header.php'; ?>
 <!-- CONTENT -->
-
+<div class="main_div_register">
 <h1>Register</h1>
 
 <?php if($errors) { ?>
@@ -62,40 +62,35 @@ if (post('action') == 'register') {
 <?php } ?>
 
 <form method="post">
-
     <input type="hidden" name="action" value="register">
 
-    <div class="field<?php if(isset($errors['name'])) echo ' error' ?>">
+    <div class="<?php if(isset($errors['name'])) echo ' error' ?>">
         <label>Name:
-            <input type="text" name="name" value="<?php echo post('name'); ?>">
+            <input style="margin-left: 82px" type="text" name="name" value="<?php echo post('name'); ?>">
         </label>
     </div>
-
-    <div class="field<?php if(isset($errors['email'])) echo ' error' ?>">
+    <br>
+    <div class="<?php if(isset($errors['email'])) echo ' error' ?>">
         <label>Email:
-            <input type="text" name="email" value="<?php echo post('email'); ?>">
+            <input style="margin-left: 85px" type="text" name="email" value="<?php echo post('email'); ?>">
         </label>
     </div>
-
-    <div class="field <?php if(isset($errors['password'])) echo ' error' ?>">
+    <br>
+    <div class="<?php if(isset($errors['password'])) echo ' error' ?>">
         <label>Password:
-            <input type="password" name="password" value="<?php echo post('password'); ?>">
+            <input style="margin-left: 54px" type="password" name="password" value="<?php echo post('password'); ?>">
         </label>
     </div>
-
-
-    <div class="field <?php if(isset($errors['password'])) echo ' error' ?>">
+    <br>
+    <div class="<?php if(isset($errors['password'])) echo ' error' ?>">
         <label>Repeat password:
             <input type="password" name="password1" >
         </label>
     </div>
-
-    <div class="field">
-        <input type="submit" class="button" value="Log In">
-    </div>
+    <input type="submit" class="button" value="Register">
 
 </form>
-
+</div>
 
 <!-- /CONTENT -->
 <?php include 'components/footer.php'; ?>

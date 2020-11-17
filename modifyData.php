@@ -14,10 +14,10 @@ $description = getDescription();
 if (post('action') == 'change_info') {
 
 
-    if (post('city')) {
+    if (htmlspecialchars(post('city'))) {
         $city = htmlspecialchars(post('city'));;
     }
-    if (post('description')) {
+    if (htmlspecialchars(post('description'))) {
         $description = htmlspecialchars(post('description'));;
     }
 
@@ -36,29 +36,24 @@ if (post('action') == 'change_info') {
 <?php include 'components/header.php'; ?>
 <!-- CONTENT -->
 
+<div class="main_div_login">
 <form method="post">
-
+<div class="post_area">
     <input type="hidden" name="action" value="change_info">
-
-    <div>
-        <label>City:
-            <input type="text" name="city" value="<?php echo $city?>">
-        </label>
-    </div>
-
-    <div>
-        <label>A few words about yourself:
-            <textarea name="description" rows="6" cols="50"><?php echo $description?></textarea>
-        </label>
-    </div>
-
-    <div>
-        <input type="submit" value="Save Changes">
-    </div>
-
+    <label>City:
+        <input type="text" name="city" value="<?php echo $city?>">
+    </label>
+    <br>
+    <label>A few words about yourself:</label>
+    <label>
+        <textarea name="description" rows="6" cols="50"><?php echo $description?></textarea>
+    </label>
+</div>
+    <input class="button" type="submit" value="Save Changes">
 </form>
-
-<a href="myPage.php">Back to my page</a>
+<br>
+<a class="linkBtn" style="padding-bottom: 12px; margin-left: 0" href="myPage.php">Back to my page</a>
+</div>
 
 <!-- /CONTENT -->
 <?php include 'components/footer.php'; ?>

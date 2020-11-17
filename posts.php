@@ -12,7 +12,7 @@ $user_id = $_SESSION['id'];
 $username = $_SESSION['username'];
 $post = "";
 
-if (post('post')) {
+if (htmlspecialchars(post('post'))) {
     $post = htmlspecialchars(post('post'));;
 }
 
@@ -36,51 +36,55 @@ if (post('action') == 'like') {
 $posts = get_posts($user_id);
 ?>
 
-<div>
-
-
-    <h3>Make Post:</h3>
+<div class="post_field">
+<h3>Make Post:</h3>
 
     <form method="post">
 
         <input type="hidden" name="action" value="add_post">
 
-        <div>
-            <label>Content:
+        <div class="post_area">
+            <label>Content:</label>
+            <label>
                 <textarea name="post" rows="6" cols="50"></textarea>
             </label>
         </div>
 
         <div>
-            <input type="submit" value="Add New Post">
+            <input class="button" type="submit" value="Add New Post">
         </div>
 
     </form>
+
+
 
     <?php if (count($posts) === 0) { ?>
         <h3>You have no posts yet.</h3>
     <?php } else { ?>
         <h3>My Posts:</h3>
-        <ul>
+        <ul class="posts">
             <?php foreach ($posts as $previous_post) { ?>
-                <li>
+                <li class="post">
                     <form method="post">
-                        <div>
+                        <div class="post_content">
                             <input type="hidden" name="action" value="delete_post">
                             <input type="hidden" name="post_id" value="<?php echo $previous_post->id; ?>">
-                            <p><?php echo $previous_post->content; ?></p>
                             <p><?php echo $previous_post->created_at; ?></p>
-                            <input type="submit" value="Delete this post">
+                            <p style="align-self: center"><?php echo $previous_post->content; ?></p>
+                            <input class="button" style="align-self: flex-end" type="submit" value="Delete this post">
                         </div>
                     </form>
-                    <a href="comments.php?post_id=<?php echo $previous_post->id?>&location=myPage.php">View Comments <?php echo count(get_comments($previous_post->id))?></a>
+                    <div class="buttons">
                     <form method="post">
                         <input type="hidden" name="action" value="like">
                         <input type="hidden" name="post_id_like" value="<?php echo $previous_post->id?>">
                         <?php $likes = get_likes($previous_post->id)?>
-                        <input type="submit" value="Like <?php echo count($likes)?>">
+                        <input class="button" type="submit" value="Like <?php echo count($likes)?>">
                     </form>
+                    <a class="linkBtn" href="comments.php?post_id=<?php echo $previous_post->id?>&location=myPage.php">View Comments: <?php echo count(get_comments($previous_post->id))?></a>
+                    </div>
                 </li>
+                <br>
             <?php } ?>
         </ul>
     <?php } ?>

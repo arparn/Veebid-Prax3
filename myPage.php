@@ -15,9 +15,10 @@ $name = $_SESSION['username'];
 
 <?php include 'components/header.php'; ?>
 <!-- CONTENT -->
-<h1>Hello, <?php echo $name?>, have a nice day!</h1>
+<div class="main_div">
+<h1>Hello, <?php echo $name?>!</h1>
 
-<div>
+<div class="field">
     <h3>City:</h3>
     <?php if ($city == "") {?>
         <p>Not set</p>
@@ -32,14 +33,12 @@ $name = $_SESSION['username'];
         <p><?php echo $description?></p>
     <?php } ?>
 
-
-    <a href="modifyData.php">Change my info</a>
 </div>
+    <br>
+    <br>
+<a class="linkBtn" style="padding-bottom: 12px" href="modifyData.php">Change my info</a>
 
-<div>
-
-    <?php include 'posts.php'; ?>
-
+<?php include 'posts.php'; ?>
 </div>
 
 <!-- /CONTENT -->
