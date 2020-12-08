@@ -8,7 +8,7 @@ require_once 'config/app.php';
 function db() {
     static $conn;
     if ($conn===NULL){
-        $conn = mysqli_connect (DB_HOST, DB_USER, DB_PASS, DB_BASE);
+        $conn = mysqli_connect ('localhost', 'root', '', 'prax3');
         $conn->set_charset('utf8');
     }
     return $conn;

@@ -7,7 +7,7 @@ if ('127.0.0.1' == $_SERVER['REMOTE_ADDR']) {
     //Otherwise passwords should not be shared on Git
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
-    define('DB_PASS', 'parool');
+    define('DB_PASS', '');
     define('DB_BASE', 'prax3');
 } else {
     //Live server configuration

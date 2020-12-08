@@ -19,6 +19,7 @@ $name = $_SESSION['username'];
 <h1>Hello, <?php echo $name?>!</h1>
 
 <div class="field">
+    <img src="assets/default_user.png" alt="default_user" style="width: 300px; height: 300px">
     <h3>City:</h3>
     <?php if ($city == "") {?>
         <p>Not set</p>
